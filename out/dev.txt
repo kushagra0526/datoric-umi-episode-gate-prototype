@@ -1,0 +1,14 @@
+profile dev, seeds 0..39
+planted 440: gate stopped 440, named 440; schema check stopped 40
+  dropped          planted  40  stopped  40  named  40  schema   0
+  clock_offset     planted  40  stopped  40  named  40  schema   0
+  pose_jump        planted  40  stopped  40  named  40  schema   0
+  rot_jump         planted  40  stopped  40  named  40  schema   0
+  scale            planted  40  stopped  40  named  40  schema   0
+  stuck_gripper    planted  40  stopped  40  named  40  schema   0
+  clipped_gripper  planted  40  stopped  40  named  40  schema   0
+  never_closes     planted  40  stopped  40  named  40  schema   0
+  lr_swapped       planted  40  stopped  40  named  40  schema   0
+  interpenetration planted  40  stopped  40  named  40  schema   0
+  nan_burst        planted  40  stopped  40  named  40  schema  40
+clean episodes 40: gate stopped 0 {}; schema check stopped 0

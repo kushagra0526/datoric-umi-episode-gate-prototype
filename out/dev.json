@@ -1,0 +1,58 @@
+{
+ "planted": {
+  "dropped": 40,
+  "clock_offset": 40,
+  "pose_jump": 40,
+  "rot_jump": 40,
+  "scale": 40,
+  "stuck_gripper": 40,
+  "clipped_gripper": 40,
+  "never_closes": 40,
+  "lr_swapped": 40,
+  "interpenetration": 40,
+  "nan_burst": 40
+ },
+ "stopped": {
+  "dropped": 40,
+  "clock_offset": 40,
+  "pose_jump": 40,
+  "rot_jump": 40,
+  "scale": 40,
+  "stuck_gripper": 40,
+  "clipped_gripper": 40,
+  "never_closes": 40,
+  "lr_swapped": 40,
+  "interpenetration": 40,
+  "nan_burst": 40
+ },
+ "named": {
+  "dropped": 40,
+  "clock_offset": 40,
+  "pose_jump": 40,
+  "rot_jump": 40,
+  "scale": 40,
+  "stuck_gripper": 40,
+  "clipped_gripper": 40,
+  "never_closes": 40,
+  "lr_swapped": 40,
+  "interpenetration": 40,
+  "nan_burst": 40
+ },
+ "schema": {
+  "dropped": 0,
+  "clock_offset": 0,
+  "pose_jump": 0,
+  "rot_jump": 0,
+  "scale": 0,
+  "stuck_gripper": 0,
+  "clipped_gripper": 0,
+  "never_closes": 0,
+  "lr_swapped": 0,
+  "interpenetration": 0,
+  "nan_burst": 40
+ },
+ "clean": 40,
+ "clean_stopped": 0,
+ "schema_clean_stopped": 0,
+ "clean_codes": {}
+}
