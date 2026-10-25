@@ -1,12 +1,12 @@
 """Pre-delivery gate for bimanual UMI-style episodes. Findings carry a code, the hand, and the frame range.
 
 ACCEPT / FIX_TRIM (a clean contiguous stretch >= 70% of the episode and >= 8 s is kept) / REJECT.
-Codes: NAN, TIME_GAP, CLOCK_OFFSET, POSE_JUMP, ROT_JUMP, SCALE, STUCK_GRIPPER, CLIPPED_GRIPPER, LABEL_MISMATCH, LR_SWAPPED, INTERPENETRATION.
+Codes: NAN, TIME_GAP, CLOCK_REWIND, CLOCK_OFFSET, POSE_JUMP, ROT_JUMP, SCALE, STUCK_GRIPPER, CLIPPED_GRIPPER, LABEL_MISMATCH, LR_SWAPPED, INTERPENETRATION.
 """
 import numpy as np
 from .gen import rotmat, G, MAXW
 
-WHOLE = {"CLOCK_OFFSET", "SCALE", "STUCK_GRIPPER", "CLIPPED_GRIPPER", "LABEL_MISMATCH", "LR_SWAPPED"}
+WHOLE = {"CLOCK_REWIND", "CLOCK_OFFSET", "SCALE", "STUCK_GRIPPER", "CLIPPED_GRIPPER", "LABEL_MISMATCH", "LR_SWAPPED"}
 MAX_SPEED = 2.0            # m/s, one frame
 MAX_ROT = 0.5              # rad, one frame
 BIMANUAL_SYNC = 1 / 60
@@ -34,6 +34,8 @@ def check(ep):
         fin = np.isfinite(h["pos"]).all(1) & np.isfinite(h["quat"]).all(1) & np.isfinite(h["width"]) & np.isfinite(h["imu_acc"]).all(1)
         for a, b in runs(~fin[:n]):
             add("NAN", name, a, b, f"{b - a} non-finite frames")
+        if (np.diff(h["t"][:n]) <= 0).any():
+            add("CLOCK_REWIND", name, msg="timestamps go backwards or repeat")
         for i in np.where(np.diff(h["t"][:n]) > 1.5 * dt)[0]:
             add("TIME_GAP", name, i, i + 2, f"{(h['t'][i + 1] - h['t'][i]) / dt:.1f} frame intervals")
         sp = np.linalg.norm(np.diff(h["pos"][:n], axis=0), axis=1) / dt

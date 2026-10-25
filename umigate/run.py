@@ -6,7 +6,7 @@ from .check import check, schema_check
 
 WANT = dict(dropped="TIME_GAP", clock_offset="CLOCK_OFFSET", pose_jump="POSE_JUMP", rot_jump="ROT_JUMP", scale="SCALE", stuck_gripper="STUCK_GRIPPER",
             clipped_gripper="CLIPPED_GRIPPER", never_closes="LABEL_MISMATCH", lr_swapped="LR_SWAPPED", interpenetration="INTERPENETRATION",
-            nan_burst="NAN", t_rewind="TIME_GAP", drift="SCALE")
+            nan_burst="NAN", t_rewind="CLOCK_REWIND", drift="SCALE")
 PROFILES = dict(dev=dict(rate=20, one_handed=False, kinds=KINDS), held=dict(rate=10, one_handed=None, kinds=KINDS + HELD_ONLY))
 
 

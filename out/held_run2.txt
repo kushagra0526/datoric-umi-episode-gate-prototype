@@ -1,0 +1,16 @@
+profile held, seeds 1000..1099
+planted 1300: gate stopped 1177, named 1176; schema check stopped 100
+  dropped          planted 100  stopped 100  named 100  schema   0
+  clock_offset     planted 100  stopped 100  named 100  schema   0
+  pose_jump        planted 100  stopped  89  named  89  schema   0
+  rot_jump         planted 100  stopped 100  named 100  schema   0
+  scale            planted 100  stopped  87  named  87  schema   0
+  stuck_gripper    planted 100  stopped 100  named 100  schema   0
+  clipped_gripper  planted 100  stopped 100  named 100  schema   0
+  never_closes     planted 100  stopped 100  named 100  schema   0
+  lr_swapped       planted 100  stopped 100  named 100  schema   0
+  interpenetration planted 100  stopped 100  named 100  schema   0
+  nan_burst        planted 100  stopped 100  named 100  schema 100
+  t_rewind         planted 100  stopped 100  named 100  schema   0
+  drift            planted 100  stopped   1  named   0  schema   0
+clean episodes 100: gate stopped 0 {}; schema check stopped 0
